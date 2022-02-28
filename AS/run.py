@@ -20,14 +20,7 @@ def AS():
         os.system(r'touch address_map.json')
         file = 'address_map.json'
     
-    ## test
-#    dict = {}
-#    dict['fibonacci.com'] = '0.0.0.0:9090'
-#    with open(file, 'w') as f:
-#        json.dump(dict, f)
-    ## test input finish
-    
-    ## US ask ip address of a hostname
+
     if request.method == 'GET':
         key = request.args.get('name')
         with open(file, 'r') as json_file:
