@@ -13,8 +13,7 @@ def AS_home():
 @app.route('/', methods = ['GET', 'POST'])
 def AS():
 
-    ## open or new the json file
-    ## tje json file will store the name-ip pairs
+
     file = 'address_map.json'
     if not os.path.exists(file):
         os.system(r'touch address_map.json')
