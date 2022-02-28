@@ -13,8 +13,12 @@ def US():
     x = request.args.get('number')
     as_ip = request.args.get('as_ip')
     as_port = request.args.get('as_port')
-    if(host_name == None or fs_port == None or x == None or as_ip == None or as_port == None):
-        return Response("Bad request", status = 400)
+    if host_name == None 
+        or fs_port == None 
+        or x == None 
+        or as_ip == None 
+        or as_port == None:
+        return Response("Invalid request", status = 400)
     else:
         print('Success, info input: '+host_name+ ','+fs_port+','+x+','+as_ip+','+as_port)
     ## ask address from AS
