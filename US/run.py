@@ -21,16 +21,16 @@ def US():
         return Response("Invalid request", status = 400)
     else:
         print('Success, info input: '+host_name+ ','+fs_port+','+x+','+as_ip+','+as_port)
-    ## ask address from AS
+    
         ip_info = {'name':host_name, 'fs_port':fs_port}
         r = requests.get('http://'+as_ip+':'+as_port, params = ip_info)
         if r.status_code == 404:
             return "hostname not found, Status:404"
-    ## send request to FS
+   
         ip_address_FS = 'http://'+r.text+':'+fs_port+'/fabonacci?number='+x
         print(ip_address_FS)
         r = requests.get(ip_address_FS)
-    ## output result
+   
         return r.text
     
     
